@@ -339,8 +339,6 @@ Guardrails:
 - `config/case_inputs.yml` — исходные данные кейса `[CASE]`
 - `config/product_paths.yml` — продуктовые параметры и допущения `[ASSUMPTION]`
 - `config/market_benchmarks.yml` — внешние рыночные факты `[MARKET]`
-- `data/sources_registry.md` — реестр внешних источников
-- `config/ASSUMPTIONS_AND_SOURCES.md` — происхождение ключевых чисел, ссылки и статус параметров
 - `src/` — расчётная логика
 - `output/model_out.json` — единый расчётный артефакт модели
 - `output/build_deck.js` — генерация основной презентации
