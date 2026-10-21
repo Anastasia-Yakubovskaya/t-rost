@@ -1,0 +1,7 @@
+metric,value,unit,period,region,source,url
+avg_traffic_per_sim,15,GB/month,2025,Russia,TelecomDaily,telecomdaily.ru
+traffic_annual_per_sim,180,GB/year,2025,Russia,TelecomDaily,telecomdaily.ru
+megafon_avg_traffic,21.4,GB/month,2025,Russia,МегаФон,операционные показатели
+mnp_transfers_2025,5.4,mln/year,2025,Russia,Минцифры/ComNews,comnews.ru
+mnp_peak_dec_2025,650,k/month,2025-12,Russia,ComNews,comnews.ru
+mvno_mnp_share,0.50,share,2025,Russia,ComNews Research,comnews.ru/content/245663

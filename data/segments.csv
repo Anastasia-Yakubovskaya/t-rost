@@ -1,0 +1,6 @@
+segment_id,name,primary_value_source,solo_eligible,circle_eligible,comment
+S1,High wallet potential,balance_and_spend,1,1,"низкая доля кошелька, есть пространство для роста"
+S2,Salary opportunity,salary_balance,1,1,"зарплата пока в другом банке"
+S3,Dormant / reactivation,reactivation,0,1,"неактивный клиент — ценен как участник круга"
+S4,New-to-bank,acquisition,0,1,"новый клиент — только через Круг / acquisition"
+S5,Paid MVNO,cannibalization,0,0,"по умолчанию исключаем; отдельный повышенный порог"

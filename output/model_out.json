@@ -1,0 +1,719 @@
+{
+  "portfolio": {
+    "solo": {
+      "contacts": 60000,
+      "takers": 21000.0,
+      "incremental_clients": 9000.000000000002,
+      "inframarginal_clients": 2999.999999999998,
+      "windfall_share": 0.24999999999999986,
+      "causal_share": 0.7500000000000001,
+      "rewarded": 12000.0,
+      "reward": {
+        "level": "Максимум",
+        "gb": 15,
+        "minutes": 300,
+        "sms": 50,
+        "month_cost": 185.0,
+        "period_cost": 925.0,
+        "budget": 1806.568446928772,
+        "enabled": true
+      },
+      "bank_revenue": 28182467.77208884,
+      "post_promo": 2550568.7024999997,
+      "revenue": 30733036.47458884,
+      "telecom": 12465000.0,
+      "crm": 2400000,
+      "onboarding": 3990000.0,
+      "cannibalization": 720000.0,
+      "cost": 19575000.0,
+      "net": 11158036.474588841,
+      "sf": 1.5700146347171822,
+      "uplift_pp": 15.000000000000002
+    },
+    "circle": {
+      "contacts": 40000,
+      "creators": 6000.0,
+      "invites": 18000.0,
+      "activated_invitees": 10440.0,
+      "qualified_invitees": 7307.999999999999,
+      "incremental_invitees": 7307.999999999999,
+      "participant_margin": 14618621.799619438,
+      "head_margin": 1677527.8435767165,
+      "bank_revenue": 16296149.643196154,
+      "post_promo": 1275284.3512499998,
+      "revenue": 17571433.994446155,
+      "reward": {
+        "expected_month_cost": 102.34399774000002,
+        "period_cost": 614.0639864400001,
+        "qualified_probability_per_slot": 0.40599999999999997,
+        "distribution": [
+          {
+            "qualified": 0,
+            "probability": 0.2095845840000001,
+            "expected_month_cost": 65.0
+          },
+          {
+            "qualified": 1,
+            "probability": 0.4297542480000001,
+            "expected_month_cost": 80.0
+          },
+          {
+            "qualified": 2,
+            "probability": 0.293737752,
+            "expected_month_cost": 140.0
+          },
+          {
+            "qualified": 3,
+            "probability": 0.06692341599999999,
+            "expected_month_cost": 197.5
+          }
+        ]
+      },
+      "telecom": 4362983.918640001,
+      "crm": 1600000,
+      "onboarding": 3132000.0,
+      "cannibalization": 360000.0,
+      "cost": 9454983.91864,
+      "net": 8116450.075806154,
+      "sf": 1.8584308704962471,
+      "incremental_per_circle": 1.2179999999999997
+    },
+    "bank_revenue": 44478617.41528499,
+    "post_promo": 3825853.0537499995,
+    "revenue": 48304470.46903499,
+    "telecom": 16827983.918640003,
+    "other_cost": 11122000.0,
+    "cannibalization": 1080000.0,
+    "development": 6000000,
+    "operating_cost": 29029983.918640003,
+    "group_net": 13274486.55039499,
+    "operating_sf": 1.6639509895842188,
+    "full_cost_sf": 1.3789464072043558,
+    "bank": 7765835.104780987,
+    "mvno": 5508651.445614,
+    "bank_standalone": 27356617.41528499,
+    "mvno_standalone": -14082130.864890004
+  },
+  "mc": {
+    "draws": 10000,
+    "p_net_pos": 0.8404,
+    "p_sf13": 0.7273,
+    "p_full13": 0.2947,
+    "p_sf10": 0.982,
+    "p5": -3933464.825110246,
+    "p50": 6985171.454497846,
+    "p95": 20621347.853565104,
+    "mean": 7482949.622796632,
+    "uncertain_inputs": [
+      "uplift/organic",
+      "solo & circle margin",
+      "creation/activation/incrementality/qualification",
+      "telecom cost",
+      "decay",
+      "post-promo opt-in",
+      "MVNO leakage"
+    ]
+  },
+  "robustness": {
+    "breakeven": [
+      {
+        "key": "circle_incremental_share",
+        "label": "Круг · incrementality",
+        "fmt": "pct",
+        "base": 0.7,
+        "portfolio_full_ge_1_3": 0.5675768489740607,
+        "portfolio_net_zero": null,
+        "circle_ge_1_0": 0.30023850135035,
+        "circle_ge_1_3": 0.44717394835085433
+      },
+      {
+        "key": "circle_invite_activation",
+        "label": "Круг · активация",
+        "fmt": "pct",
+        "base": 0.58,
+        "portfolio_full_ge_1_3": 0.3637091053400673,
+        "portfolio_net_zero": null,
+        "circle_ge_1_0": 0.0777874772666873,
+        "circle_ge_1_3": 0.17992705387043695
+      },
+      {
+        "key": "circle_participant_margin",
+        "label": "Круг · маржа участника",
+        "fmt": "rub",
+        "base": 2683,
+        "portfolio_full_ge_1_3": 2130.410397482541,
+        "portfolio_net_zero": null,
+        "circle_ge_1_0": 982.3687890383437,
+        "circle_ge_1_3": 1465.5282760790415
+      },
+      {
+        "key": "solo_margin",
+        "label": "Соло · Δ-маржа",
+        "fmt": "rub",
+        "base": 4200,
+        "portfolio_full_ge_1_3": 3787.8620755249895,
+        "portfolio_net_zero": 1148.711368816893,
+        "circle_ge_1_0": null,
+        "circle_ge_1_3": null
+      },
+      {
+        "key": "solo_uplift_pp",
+        "label": "Соло · uplift, п.п.",
+        "fmt": "pp",
+        "base": 15.000000000000002,
+        "portfolio_full_ge_1_3": 12.766269628471283,
+        "portfolio_net_zero": 5.621121046930205,
+        "circle_ge_1_0": null,
+        "circle_ge_1_3": null
+      },
+      {
+        "key": "telecom_cost_mult",
+        "label": "Себестоимость связи, ×",
+        "fmt": "x",
+        "base": 1.0,
+        "portfolio_full_ge_1_3": 1.1013257183881215,
+        "portfolio_net_zero": 1.5967485753478656,
+        "circle_ge_1_0": null,
+        "circle_ge_1_3": null
+      }
+    ],
+    "stress": [
+      {
+        "id": "base",
+        "label": "База (лаг + затухание учтены)",
+        "group_net": 13274486.55039499,
+        "operating_sf": 1.6639509895842188,
+        "full_cost_sf": 1.3789464072043558,
+        "solo_sf": 1.5700146347171822,
+        "circle_sf": 1.8584308704962471
+      },
+      {
+        "id": "no_decay",
+        "label": "Без затухания и лага — верхняя граница",
+        "group_net": 27058647.495109998,
+        "operating_sf": 2.086577327951776,
+        "full_cost_sf": 1.7428680097797233,
+        "solo_sf": 2.061331734482759,
+        "circle_sf": 2.1321259084263326
+      },
+      {
+        "id": "fill",
+        "label": "Круг: 2 приглашённых",
+        "group_net": 10255578.63993518,
+        "operating_sf": 1.598158961412504,
+        "full_cost_sf": 1.3091262692260803,
+        "solo_sf": 1.5700146347171822,
+        "circle_sf": 1.6706394110847225
+      },
+      {
+        "id": "decay_fast",
+        "label": "Затухание Δ 5%/мес",
+        "group_net": 8345586.071243577,
+        "operating_sf": 1.4946776268965687,
+        "full_cost_sf": 1.2384462130054505,
+        "solo_sf": 1.4088600392328037,
+        "circle_sf": 1.672916644199592
+      },
+      {
+        "id": "uplift_low",
+        "label": "Соло: uplift 8 п.п.",
+        "group_net": 3366969.210878536,
+        "operating_sf": 1.3762895296720334,
+        "full_cost_sf": 1.1089881514762643,
+        "solo_sf": 1.0810026645337725,
+        "circle_sf": 1.8584308704962471
+      },
+      {
+        "id": "leak",
+        "label": "Утечка firewall 8%",
+        "group_net": 10034486.55039499,
+        "operating_sf": 1.4968854831419065,
+        "full_cost_sf": 1.26220252853327,
+        "solo_sf": 1.4139883356148535,
+        "circle_sf": 1.6679127495729975
+      },
+      {
+        "id": "incr50",
+        "label": "Круг: incrementality 50%",
+        "group_net": 9097737.464789443,
+        "operating_sf": 1.5200739176123093,
+        "full_cost_sf": 1.2597128644397806,
+        "solo_sf": 1.5700146347171822,
+        "circle_sf": 1.4166798192468302
+      },
+      {
+        "id": "combined",
+        "label": "Комбинированный стресс",
+        "group_net": -7639012.654577564,
+        "operating_sf": 0.9357605014361235,
+        "full_cost_sf": 0.7576001243437861,
+        "solo_sf": 0.8892470863074734,
+        "circle_sf": 1.0260938012943157
+      }
+    ],
+    "tornado": [
+      {
+        "label": "Соло · Δ-маржа",
+        "down": -5636493.554417759,
+        "up": 5636493.554417774,
+        "span": 11272987.108835533
+      },
+      {
+        "label": "Себестоимость связи",
+        "down": -4448937.827009246,
+        "up": 4448937.827009253,
+        "span": 8897875.654018499
+      },
+      {
+        "label": "Круг · incrementality",
+        "down": -2923724.3599238843,
+        "up": 2923724.359923899,
+        "span": 5847448.719847783
+      },
+      {
+        "label": "Круг · маржа участника",
+        "down": -2734990.4366438836,
+        "up": 2357522.590083901,
+        "span": 5092513.026727784
+      },
+      {
+        "label": "Круг · активация",
+        "down": -1797509.5465075597,
+        "up": 1760886.6796339825,
+        "span": 3558396.226141542
+      }
+    ]
+  },
+  "firewall": {
+    "cost_per_incremental": 2094.9999999999995,
+    "lost_margin_year": 3000,
+    "coverage_without_firewall": 1.4946946577612752,
+    "coverage_paid_mvno": 0.6145996679116528,
+    "margin_required_for_threshold": 6623.5,
+    "margin_assumed": 3131.3853080098706
+  },
+  "derivation": {
+    "solo": {
+      "balance": 3624.0,
+      "card": 336.0,
+      "cross_sell": 240.0,
+      "total": 4200.0
+    },
+    "circle": {
+      "balance": 1963.0,
+      "card": 480.0,
+      "cross_sell": 240.0,
+      "total": 2683.0
+    },
+    "threshold": {
+      "threshold_rub": 25000,
+      "marginal_margin": 1887.5,
+      "subsidy_per_rewarded": 925.0,
+      "ratio": 2.0405405405405403,
+      "required_ratio": 1.3
+    },
+    "realization": 0.7455679304785406
+  },
+  "unit": {
+    "solo": {
+      "bank_margin": 3131.3853080098706,
+      "post_promo": 283.39652249999995,
+      "revenue": 3414.781830509871,
+      "telecom": 1385.0,
+      "onboarding_crm": 709.9999999999999,
+      "cannibalization": 80.0,
+      "cost": 2175.0,
+      "net": 1239.7818305098708,
+      "coverage": 1.570014634717182
+    },
+    "circle": {
+      "bank_margin": 2229.905534099091,
+      "post_promo": 174.5052478448276,
+      "revenue": 2404.410781943918,
+      "telecom": 597.0147671921185,
+      "onboarding_crm": 647.5095785440615,
+      "cannibalization": 49.26108374384238,
+      "cost": 1293.7854294800222,
+      "net": 1110.625352463896,
+      "coverage": 1.8584308704962467
+    }
+  },
+  "segments": {
+    "S2": {
+      "name": "Зарплата в другом банке",
+      "size": 8500000.0,
+      "route": "Т-Соло",
+      "data": "зарплатные зачисления, переводы, средний остаток, MNP, намерение",
+      "priority": 1
+    },
+    "S1": {
+      "name": "Низкая доля кошелька / высокий потенциал",
+      "size": 6800000.0,
+      "route": "Т-Соло",
+      "data": "остатки, карточные траты, доля кошелька, продукты, доход",
+      "priority": 2
+    },
+    "S3": {
+      "name": "Dormant / реактивация",
+      "size": 10500000.0,
+      "route": "Т-Круг",
+      "data": "давность активности, коммуникации, отклики, сеть переводов",
+      "priority": 3
+    },
+    "S4": {
+      "name": "New-to-bank в окружении клиентов",
+      "size": null,
+      "route": "Т-Круг downstream",
+      "data": "приглашения, согласия, KYC, first-touch атрибуция",
+      "priority": 4
+    },
+    "S5": {
+      "name": "Платящие абоненты MVNO",
+      "size": 7100000,
+      "route": "не предлагать",
+      "data": "тариф, платежи, маржа, семейные/доп. SIM",
+      "priority": 99
+    },
+    "routing_policy": [
+      "1) S5 paid MVNO → no offer (firewall).",
+      "2) S2 salary elsewhere → Solo; if also S1, S2 wins to keep one treatment.",
+      "3) Remaining S1 low wallet share → Solo.",
+      "4) S3 dormant → Circle head; S4 new-to-bank appears only downstream after consent.",
+      "5) Everyone else → business as usual / control pool."
+    ],
+    "note": "S1/S2 пересекаются и не суммируются как TAM; при конфликте S2 имеет приоритет. S4 не является pre-consent сегментом для таргетинга."
+  },
+  "monthly": [
+    {
+      "month": 1,
+      "revenue": 0.0,
+      "cost": 20859663.98644,
+      "net": -20859663.98644,
+      "cum_net": -20859663.98644
+    },
+    {
+      "month": 2,
+      "revenue": 0.0,
+      "cost": 2834063.98644,
+      "net": -2834063.98644,
+      "cum_net": -23693727.97288
+    },
+    {
+      "month": 3,
+      "revenue": 4971447.0,
+      "cost": 2834063.98644,
+      "net": 2137383.01356,
+      "cum_net": -21556344.959319998
+    },
+    {
+      "month": 4,
+      "revenue": 4847160.825,
+      "cost": 2834063.98644,
+      "net": 2013096.83856,
+      "cum_net": -19543248.120759998
+    },
+    {
+      "month": 5,
+      "revenue": 4725981.804374999,
+      "cost": 2834063.98644,
+      "net": 1891917.8179349992,
+      "cum_net": -17651330.302824996
+    },
+    {
+      "month": 6,
+      "revenue": 4607832.259265625,
+      "cost": 2834063.98644,
+      "net": 1773768.2728256248,
+      "cum_net": -15877562.029999372
+    },
+    {
+      "month": 7,
+      "revenue": 4804950.987783984,
+      "cost": 0.0,
+      "net": 4804950.987783984,
+      "cum_net": -11072611.042215388
+    },
+    {
+      "month": 8,
+      "revenue": 4692635.076464384,
+      "cost": 0.0,
+      "net": 4692635.076464384,
+      "cum_net": -6379975.965751004
+    },
+    {
+      "month": 9,
+      "revenue": 5071118.523865274,
+      "cost": 0.0,
+      "net": 5071118.523865274,
+      "cum_net": -1308857.4418857303
+    },
+    {
+      "month": 10,
+      "revenue": 4964348.21066708,
+      "cost": 0.0,
+      "net": 4964348.21066708,
+      "cum_net": 3655490.76878135
+    },
+    {
+      "month": 11,
+      "revenue": 4860247.15529884,
+      "cost": 0.0,
+      "net": 4860247.15529884,
+      "cum_net": 8515737.92408019
+    },
+    {
+      "month": 12,
+      "revenue": 4758748.626314807,
+      "cost": 0.0,
+      "net": 4758748.626314807,
+      "cum_net": 13274486.550394997
+    }
+  ],
+  "ladder": {
+    "incrementality_70": [
+      {
+        "qualified": 0,
+        "proxy_margin": 0.0,
+        "budget": 0.0,
+        "level": "Старт",
+        "gb": 5,
+        "minutes": 100,
+        "month_cost": 65.0,
+        "period_cost": 390.0,
+        "downgraded": false
+      },
+      {
+        "qualified": 1,
+        "proxy_margin": 2000.3587574739245,
+        "budget": 1077.1162540244209,
+        "level": "Старт",
+        "gb": 5,
+        "minutes": 100,
+        "month_cost": 65.0,
+        "period_cost": 390.0,
+        "downgraded": false
+      },
+      {
+        "qualified": 2,
+        "proxy_margin": 4000.717514947849,
+        "budget": 2154.2325080488417,
+        "level": "Рост",
+        "gb": 10,
+        "minutes": 200,
+        "month_cost": 125.0,
+        "period_cost": 750.0,
+        "downgraded": false
+      },
+      {
+        "qualified": 3,
+        "proxy_margin": 6001.076272421773,
+        "budget": 3231.3487620732626,
+        "level": "Круг",
+        "gb": 15,
+        "minutes": 300,
+        "month_cost": 185.0,
+        "period_cost": 1110.0,
+        "downgraded": false
+      }
+    ],
+    "incrementality_50": [
+      {
+        "qualified": 0,
+        "proxy_margin": 0.0,
+        "budget": 0.0,
+        "level": "Старт",
+        "gb": 5,
+        "minutes": 100,
+        "month_cost": 65.0,
+        "period_cost": 390.0,
+        "downgraded": false
+      },
+      {
+        "qualified": 1,
+        "proxy_margin": 2000.3587574739245,
+        "budget": 769.3687528745863,
+        "level": "Старт",
+        "gb": 5,
+        "minutes": 100,
+        "month_cost": 65.0,
+        "period_cost": 390.0,
+        "downgraded": false
+      },
+      {
+        "qualified": 2,
+        "proxy_margin": 4000.717514947849,
+        "budget": 1538.7375057491727,
+        "level": "Рост",
+        "gb": 10,
+        "minutes": 200,
+        "month_cost": 125.0,
+        "period_cost": 750.0,
+        "downgraded": false
+      },
+      {
+        "qualified": 3,
+        "proxy_margin": 6001.076272421773,
+        "budget": 2308.1062586237585,
+        "level": "Круг",
+        "gb": 15,
+        "minutes": 300,
+        "month_cost": 185.0,
+        "period_cost": 1110.0,
+        "downgraded": false
+      }
+    ],
+    "start_exposure_per_circle": 195.0
+  },
+  "power": {
+    "rows": [
+      {
+        "arm": "solo",
+        "effect_per_client": 193.13283559760654,
+        "se": 183.00671800922694,
+        "power_at_n": 0.27775568577426607,
+        "n_required": 4441,
+        "n": 800,
+        "cv": 1.0
+      },
+      {
+        "arm": "circle",
+        "effect_per_client": 207.79033518929816,
+        "se": 176.51623514444333,
+        "power_at_n": 0.3200068817319456,
+        "n_required": 3570,
+        "n": 800,
+        "cv": 1.0
+      }
+    ],
+    "circles_in_arm": 120.0,
+    "binary_mde": {
+      "p0_5pct": 0.03506597683827638,
+      "p0_10pct": 0.04588563599707206,
+      "p0_20pct": 0.058749707653837975
+    },
+    "stage2_n_per_arm": 4441,
+    "stage2_is_planning_placeholder": true,
+    "cv_sensitivity": [
+      {
+        "cv": 1.0,
+        "solo_n_required": 4441,
+        "circle_n_required": 3570,
+        "solo_power": 0.27775568577426607,
+        "circle_power": 0.3200068817319456
+      },
+      {
+        "cv": 2.0,
+        "solo_n_required": 6159,
+        "circle_n_required": 4070,
+        "solo_power": 0.22702101984095163,
+        "circle_power": 0.29378695725057513
+      },
+      {
+        "cv": 3.0,
+        "solo_n_required": 8839,
+        "circle_n_required": 4820,
+        "solo_power": 0.1849122761044723,
+        "circle_power": 0.2637508980910821
+      }
+    ],
+    "baseline_margin_sd": 2500,
+    "note": "Каждый ITT имеет собственный matched control той же eligibility-страты. Control и treatment несут одинаковую BAU/pre-post variance; Stage 2 N — planning placeholder и пересчитывается по фактической variance Stage 1."
+  },
+  "pilot": {
+    "arms": [
+      "solo_control",
+      "solo_treatment",
+      "circle_control",
+      "circle_treatment"
+    ],
+    "n_per_arm": 800,
+    "total_n": 3200,
+    "comparisons": [
+      {
+        "name": "Solo ITT",
+        "eligible": "S1/S2 после firewall",
+        "control": "solo_control",
+        "treatment": "solo_treatment",
+        "n_control": 800,
+        "n_treatment": 800
+      },
+      {
+        "name": "Circle ITT",
+        "eligible": "S3/S4/eligible heads после firewall",
+        "control": "circle_control",
+        "treatment": "circle_treatment",
+        "n_control": 800,
+        "n_treatment": 800
+      }
+    ],
+    "duration_days": 90,
+    "extended_observation_days": 180,
+    "primary_metric": "incremental_group_margin_per_randomized_client",
+    "stop_loss": 1200000,
+    "estimand": "ITT: разность среднего 12-месячного run-rate group margin на randomized eligible-клиента внутри каждой страты",
+    "randomization": "Два параллельных RCT, а не один общий control. Eligibility фиксируется до эксперимента. Solo: control-S vs treatment-S; Circle: control-C vs treatment-C, по 800 в ячейке. Блокировка по сегменту, региону, baseline-марже и активности.",
+    "circle_design": "В Т-Круге единица рандомизации и анализа — глава круга. Treatment получает механику приглашений; control-C — нет. Downstream-маржа приглашённых после consent атрибутируется главе по first-touch.",
+    "interference": "Повторные приглашения дедуплицируются; overlap фиксируется после consent. Для известных pre-period связей — cluster-robust SE и sensitivity. Рандомизация не требует графа будущих приглашений; основной анализ остаётся ITT по randomized head.",
+    "analysis": "Отдельный ITT и 80% CI для Solo и Circle; one-sided alpha=5% только для заранее заданного investment-gate. Множественные вторичные метрики не используются для SCALE; missing downstream = 0 в ITT, per-protocol — только sensitivity.",
+    "guardrails": [
+      "complaints",
+      "bank_churn",
+      "mvno_cannibalization",
+      "support_load",
+      "fraud_flags"
+    ],
+    "post_scale": "постоянный holdout 10% для калибровки incrementality",
+    "stage1_budget": 1200000
+  },
+  "assumptions": {
+    "solo": {
+      "offer_conversion": 0.2,
+      "organic_rate": 0.05,
+      "subsidized_months": 5,
+      "reward": {
+        "level": "Максимум",
+        "gb": 15,
+        "minutes": 300,
+        "sms": 50,
+        "month_cost": 185.0,
+        "period_cost": 925.0,
+        "budget": 1806.568446928772,
+        "enabled": true
+      }
+    },
+    "circle": {
+      "creation_rate": 0.15,
+      "invite_activation_rate": 0.58,
+      "incremental_share": 0.7,
+      "avg_invites": 3.0,
+      "max_members": 4
+    },
+    "qualified_delta": {
+      "balance_window_days": 30,
+      "balance_min_delta": 25000,
+      "salary_min_receipts": 2,
+      "salary_window_days": 60,
+      "salary_min_gap_days": 14,
+      "salary_min_amount": 30000,
+      "salary_max_amount_ratio": 1.5,
+      "salary_require_same_payer": true,
+      "salary_require_salary_signal": true,
+      "referral_active_days": 30,
+      "new_to_bank_lookback_days": 180,
+      "reactivation_dormant_days": 90,
+      "vesting_days": 60,
+      "clawback_days": 90,
+      "max_circles_per_client": 1,
+      "max_open_invitations": 3
+    },
+    "pilot": {
+      "margin_cv": 1.0,
+      "run_rate_noise_inflation": 1.25
+    }
+  },
+  "meta": {
+    "model_version": "v10-shortlist",
+    "source_of_truth": "config/product_paths.yml",
+    "optimistic": false
+  }
+}

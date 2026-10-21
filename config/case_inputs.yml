@@ -1,0 +1,38 @@
+# Вводные из кейса. Источник: Кейс 3
+
+telecom_costs:
+  per_gb: 10            # руб за 1 ГБ
+  per_minute: 0.10      # руб за 1 минуту
+  per_sms: 0.10         # руб за 1 SMS
+
+client_base:
+  total_clients: 55_000_000
+  active_clients: 34_000_000
+  mvno_paid_subscribers: 7_100_000
+
+margins:
+  debit_interchange: 0.004
+  debit_balance: 0.08
+  deposits: 0.01
+  savings: 0.02
+  credit_card: 0.08
+  consumer_credit: 0.06
+  installment: 0.04
+  investments: 0.001
+  insurance: 0.20
+  mvno_paid: 250          # руб/мес с платящего абонента
+  subscriptions: 120      # руб/мес
+  food_fuel: 0.02
+  cashback: -0.01
+  bnpl: 0.02
+  auto: 0.01
+  marketplace: 0.04
+  rko_monthly: 500        # руб/мес
+  rko_balance: 0.03
+  acquiring: 0.003
+  business_credit: 0.05
+
+horizons:
+  quick_signal_weeks: 4
+  first_results_days: 90
+  sustained_value_months: 12

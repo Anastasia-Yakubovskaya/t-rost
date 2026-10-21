@@ -1,0 +1,14 @@
+metric,value,unit,period,region,source,url
+avg_account_balance,894000,RUB,2026-H1,Russia,АСВ/banki.ru,оценка без микро-остатков
+avg_deposit,419000,RUB,2026-01-01,Russia,АСВ,banki.ru
+share_accounts_gt_50k,0.82,share,2026,Russia,АСВ (распределение),оценка
+share_accounts_gt_100k,0.62,share,2026,Russia,АСВ (распределение),оценка
+share_deposits_gt_100k,0.72,share,2026,Russia,АСВ,banki.ru
+share_deposits_gt_300k,0.37,share,2026,Russia,АСВ,banki.ru
+fastest_deposit_growth,"3-10 mln RUB",range,2025,Russia,АСВ,banki.ru
+avg_income,51000,RUB/month,2025,Russia,Росстат,rosstat.gov.ru
+median_income,37000,RUB/month,2025,Russia,Росстат,rosstat.gov.ru
+share_income_gt_150k,null,share,2025,Russia,нет публичной цифры,[ASSUMPTION] ~10-15%
+fintech_retention_30d,0.25,share,2025,Global,AppsFlyer,appsflyer.com
+fintech_conversion_low,0.18,share,2025,Global,AppsFlyer,appsflyer.com
+fintech_conversion_high,0.30,share,2025,Global,AppsFlyer,appsflyer.com

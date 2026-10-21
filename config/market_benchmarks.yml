@@ -1,0 +1,36 @@
+verified_on: '2026-10-21'
+facts:
+  sber_salary_offer:
+    value: 50 ГБ + 300 минут бесплатно зарплатным клиентам при переносе номера; действует
+      пока приходит зарплата
+    date: '2026-09-18'
+    region: Россия
+    source: СберМобайл
+    url: https://sbermobile.ru/about/news/mobilnaya-svyaz-ot-sbermobajla-stanet-besplatnoj-dlya-zarplatnykh-klientov-sbera.html
+  sber_close_circle:
+    value: до 5 номеров с оплатой с одного счёта
+    date: '2025-07-24'
+    region: Россия
+    source: СберМобайл
+    url: https://sbermobile.ru/about/news/sbermobajl-zapustil-uslugu-po-oplate-neskolkikh-nomerov-s-odnogo-schyota.html
+  bank_mvno_share:
+    value: 93% абонентской базы независимых MVNO приходится на банковские MVNO
+    date: '2026-06-05'
+    period: '2025'
+    region: Россия
+    source: ComNews Research
+    url: https://www.comnews.ru/content/245663/2026-06-05/2026-w23/1180/rynok-mvno-rossii-itogam-2025-goda-sostavil-111-mlrd-rubley-kolichestvo-sim-kart-prevysilo-40-mln-shtuk
+  mnp_share:
+    value: 50% базы независимых MVNO сформировано через MNP
+    date: '2026-06-05'
+    period: '2025'
+    region: Россия
+    source: ComNews Research
+    url: https://www.comnews.ru/content/245663/2026-06-05/2026-w23/1180/rynok-mvno-rossii-itogam-2025-goda-sostavil-111-mlrd-rubley-kolichestvo-sim-kart-prevysilo-40-mln-shtuk
+  tmobile_scale:
+    value: 'Т-Мобайл: 7,14 млн абонентов, ARPU 501 ₽ по итогам 2025 года'
+    date: '2026-06-05'
+    period: '2025'
+    region: Россия
+    source: ComNews Research
+    url: https://www.comnews.ru/content/245663/2026-06-05/2026-w23/1180/rynok-mvno-rossii-itogam-2025-goda-sostavil-111-mlrd-rubley-kolichestvo-sim-kart-prevysilo-40-mln-shtuk

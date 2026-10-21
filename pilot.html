@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Т-Рост — one-pager</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; }
+  body { font-family: "Inter", "Segoe UI", Arial, sans-serif; background: #e8e6df; color: #141414; }
+  .sheet { width: 210mm; margin: 0 auto; background: #f7f6f2; padding: 7mm 9mm 6mm; }
+
+  /* ---------- HERO ---------- */
+  .hero { background: #141414; color: #fff; border-radius: 14px; padding: 7mm 8mm 6mm; position: relative; overflow: hidden; }
+  .hero::after { content: ""; position: absolute; right: -30mm; top: -30mm; width: 90mm; height: 90mm;
+                 background: radial-gradient(circle, rgba(255,221,45,.28), transparent 65%); border-radius: 50%; }
+  .badge { display: inline-block; background: #ffdd2d; color: #141414; font-size: 8px; font-weight: 800;
+           letter-spacing: 1px; text-transform: uppercase; border-radius: 9px; padding: 3px 10px; margin-bottom: 5px; }
+  h1 { font-size: 27px; font-weight: 800; letter-spacing: -.5px; }
+  h1 .y { color: #ffdd2d; }
+  .tag { font-size: 10px; color: #bdbdbd; margin-top: 4px; line-height: 1.45; max-width: 120mm; }
+  .stamp { position: absolute; right: 8mm; top: 7mm; border: 1.5px solid #ffdd2d; color: #ffdd2d; border-radius: 10px;
+           padding: 5px 12px; font-size: 9px; font-weight: 800; letter-spacing: .8px; text-transform: uppercase;
+           transform: rotate(3deg); text-align: center; line-height: 1.3; z-index: 1; }
+
+  /* ---------- ОБЩЕЕ ---------- */
+  h2 { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #141414;
+       margin: 5mm 0 2mm; display: flex; align-items: center; gap: 6px; }
+  h2::before { content: ""; width: 14px; height: 3px; background: #ffdd2d; border-radius: 2px; }
+  .two { display: grid; grid-template-columns: 1.08fr .92fr; gap: 7px; }
+  .card { background: #fff; border: 1px solid #e3e1da; border-radius: 11px; padding: 6px 9px;
+          box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+
+  /* ---------- МЕТРИКИ ---------- */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
+  .stat { background: #fff; border: 1px solid #e3e1da; border-top: 3px solid #ffdd2d; border-radius: 11px;
+          padding: 6px 9px 7px; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+  .stat .v { font-size: 18px; font-weight: 800; letter-spacing: -.4px; }
+  .stat .l { font-size: 8px; color: #6d6d6d; margin-top: 2px; line-height: 1.3; }
+
+  /* ---------- ИДЕЯ / МАРЖА ---------- */
+  .route { border-left: 3px solid #ffdd2d; padding-left: 8px; margin-bottom: 5px; }
+  .route b { font-size: 10.5px; }
+  .route p { font-size: 9.5px; color: #4c4c4c; line-height: 1.4; }
+  .metric-line { font-size: 9.5px; color: #4c4c4c; line-height: 1.4; background: #fff8dd; border: 1px solid #f2e3a1;
+                 border-radius: 9px; padding: 5px 8px; margin-top: 4px; }
+  .mrow { font-size: 9.5px; line-height: 1.5; color: #333; }
+  .mrow .plus { color: #b98f00; font-weight: 800; }
+  .mhead { font-size: 11px; font-weight: 800; margin-bottom: 2px; }
+  .mhead span { color: #b98f00; }
+
+  /* ---------- СТРЕСС ---------- */
+  .srow { display: grid; grid-template-columns: 52mm 1fr 20mm 14mm; align-items: center; gap: 6px; padding: 2.6px 0; }
+  .srow.head { font-size: 8px; font-weight: 800; text-transform: uppercase; letter-spacing: .6px; color: #8a8a8a; }
+  .sname { font-size: 9.5px; color: #333; }
+  .barwrap { background: #eceae3; height: 9px; border-radius: 5px; overflow: hidden; }
+  .bar { height: 100%; border-radius: 5px; background: linear-gradient(90deg, #ffdd2d, #f0b400); }
+  .bar.neg { background: linear-gradient(90deg, #e07a72, #c0392b); }
+  .snet { font-size: 9.5px; font-weight: 700; text-align: right; }
+  .snet.neg { color: #c0392b; }
+  .chip { font-size: 8.5px; font-weight: 800; text-align: center; border-radius: 8px; padding: 2px 0; }
+  .ok   { background: #e6f4ea; color: #1e8e3e; }
+  .warn { background: #fdf1dc; color: #b06000; }
+  .bad  { background: #fdecea; color: #c0392b; }
+
+  /* ---------- ПИЛОТ ---------- */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+  .step { position: relative; padding-top: 8px; }
+  .step .num { position: absolute; top: -6px; left: 9px; width: 16px; height: 16px; background: #141414; color: #ffdd2d;
+               border-radius: 50%; font-size: 9px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .step b { font-size: 10px; display: block; margin-bottom: 2px; }
+  .step p { font-size: 9px; color: #4c4c4c; line-height: 1.42; }
+  .gate { margin-top: 5px; font-size: 9px; color: #333; line-height: 1.5; }
+  .gate .g { display: inline-block; background: #fff; border: 1px solid #e3e1da; border-radius: 8px;
+             padding: 2px 7px; margin: 2px 3px 0 0; font-size: 8.5px; font-weight: 700; }
+  .gate .g::before { content: "✓ "; color: #1e8e3e; font-weight: 800; }
+
+  .foot { margin-top: 4mm; border-top: 1px solid #ddd9cf; padding-top: 2mm; font-size: 8px; color: #7a7a7a; line-height: 1.45; }
+  @media print { body { background: #fff; } .sheet { width: 100%; padding: 5mm 7mm; } }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="hero">
+    <div class="stamp">Решение:<br>GO на пилот</div>
+    <div class="badge">Mini-CEO · кейс 3 · пилот one-pager</div>
+    <h1>Т-Рост: связь за <span class="y">доказанный рост</span></h1>
+    <p class="tag">Бесплатная связь — не подарок, а ограниченная субсидия за дополнительную ценность для группы.
+    Комбинированный стресс уходит в минус, поэтому масштаб без эксперимента запрещён: сначала пилот, потом решение.</p>
+  </div>
+
+  <h2>Ключевые цифры волны 100 тыс. контактов</h2>
+  <div class="stats">
+    <div class="stat"><div class="v">+13,3 млн ₽</div><div class="l">net группы после 6 млн ₽ разработки</div></div>
+    <div class="stat"><div class="v">1,38×</div><div class="l">покрытие с учётом разработки (операционное выше)</div></div>
+    <div class="stat"><div class="v">84%</div><div class="l">Монте-Карло: прогонов с net &gt; 0</div></div>
+    <div class="stat"><div class="v">29%</div><div class="l">Монте-Карло: покрытие ≥ 1,3× — сознательно консервативно</div></div>
+  </div>
+
+  <h2>Идея и происхождение маржи</h2>
+  <div class="two">
+    <div>
+      <div class="route"><b>Т-Соло · 60% волны</b>
+        <p>Пакеты 5/10/15 ГБ за зарплатный проект и рост доли кошелька. Первый месяц пробный, следующие до пяти — только при выполненном Qualified Δ.</p></div>
+      <div class="route"><b>Т-Круг · 40% волны</b>
+        <p>Приглашение стоит 0 ₽; пакет главы растёт только после подтверждённой ценности участников. Рост через новых клиентов и реактивацию спящих.</p></div>
+      <div class="route"><b>Firewall</b>
+        <p>Платящих абонентов MVNO (7,1 млн) не трогаем: дарить им связь — субсидировать собственную маржу.</p></div>
+      <div class="metric-line"><b>Метрика:</b> инкрементальная маржа группы на рандомизированного участника. Qualified Δ — лишь триггер выплаты; причинность проверяют RCT и постоянный holdout 10%.</div>
+    </div>
+    <div class="card">
+      <div class="mhead">Т-Соло: <span>4 200 ₽/год</span></div>
+      <div class="mrow">остаток 48 тыс. × (70%×8% + 30%×6,5%) = 3 624 ₽<br>
+        <span class="plus">+</span> карты: 7 тыс./мес × 12 × 0,4% = 336 ₽<br>
+        <span class="plus">+</span> кросс-селл: 15% × 1 600 ₽ = 240 ₽</div>
+      <div class="mhead" style="margin-top:4px">Участник Круга: <span>2 683 ₽/год</span></div>
+      <div class="mrow">остаток 26 тыс. × 8% = 2 080 ₽ <span class="plus">+</span> карты 480 ₽ <span class="plus">+</span> кросс-селл 240 ₽</div>
+      <div class="mrow" style="margin-top:4px; color:#6d6d6d">Порог Qualified Δ по остатку +25 тыс. ₽: на границе маржа ≈1 888 ₽ против субсидии 925 ₽ (2,04×). После льготы — только явный opt-in: 249 ₽/мес, затем 349 ₽.</div>
+    </div>
+  </div>
+
+  <h2>Стресс-сценарии: где ломается экономика</h2>
+  <div class="srow head"><div>Сценарий</div><div>Net группы (масштаб)</div><div style="text-align:right">Net</div><div style="text-align:center">Покрытие</div></div>
+  <div class="srow"><div class="sname">База: лаг квалификации и затухание учтены</div><div class="barwrap"><div class="bar" style="width:49%"></div></div><div class="snet">+13,3</div><div class="chip ok">1,38×</div></div>
+  <div class="srow"><div class="sname">Без затухания и лага — верхняя граница</div><div class="barwrap"><div class="bar" style="width:100%"></div></div><div class="snet">+27,1</div><div class="chip ok">1,74×</div></div>
+  <div class="srow"><div class="sname">Круг: 2 приглашённых вместо 3</div><div class="barwrap"><div class="bar" style="width:38%"></div></div><div class="snet">+10,3</div><div class="chip ok">1,31×</div></div>
+  <div class="srow"><div class="sname">Утечка платящих MVNO 8%</div><div class="barwrap"><div class="bar" style="width:37%"></div></div><div class="snet">+10,0</div><div class="chip warn">1,26×</div></div>
+  <div class="srow"><div class="sname">Круг: инкрементальность 50%</div><div class="barwrap"><div class="bar" style="width:34%"></div></div><div class="snet">+9,1</div><div class="chip warn">1,26×</div></div>
+  <div class="srow"><div class="sname">Затухание Δ 5%/мес</div><div class="barwrap"><div class="bar" style="width:31%"></div></div><div class="snet">+8,3</div><div class="chip warn">1,24×</div></div>
+  <div class="srow"><div class="sname">Соло: uplift 8 п.п. вместо 15</div><div class="barwrap"><div class="bar" style="width:13%"></div></div><div class="snet">+3,4</div><div class="chip warn">1,11×</div></div>
+  <div class="srow"><div class="sname"><b>Комбинированный стресс</b></div><div class="barwrap"><div class="bar neg" style="width:28%"></div></div><div class="snet neg">−7,6</div><div class="chip bad">0,76×</div></div>
+
+  <h2>Пилот и правило решения</h2>
+  <div class="steps">
+    <div class="card step"><div class="num">1</div><b>Stage 1 · kill-switch</b>
+      <p>Два параллельных RCT по 800 в ячейке (3 200 рандомизированных). Оценка разброса, а не доказательство годовой маржи; run-rate на 180-й день.</p></div>
+    <div class="card step"><div class="num">2</div><b>Stage 2 · подтверждение</b>
+      <p>Мощность при CV=1: Solo 28%, Circle 32% → ≈4 441 на ветку. Итоговый размер пересчитывается по разбросу, наблюдаемому в Stage 1.</p></div>
+    <div class="card step"><div class="num">3</div><b>После масштаба</b>
+      <p>Постоянный holdout 10% для калибровки инкрементальности: эффект измеряем не один раз, а всё время жизни продукта.</p></div>
+  </div>
+  <div class="gate"><b>SCALE только если одновременно:</b>
+    <span class="g">ITT &gt; 0</span><span class="g">операционное покрытие ≥ 1,3×</span><span class="g">покрытие с разработкой ≥ 1,3×</span><span class="g">низ 80% CI ≥ 1,0×</span><span class="g">guardrails в норме</span>
+    иначе ITERATE или STOP.
+  </div>
+
+  <div class="foot">
+    Источник чисел — output/model_out.json (модель v10-shortlist). Воспроизводимость: python main.py → pytest -q (40 passed) → node output/build_deck.js / build_appendix.js.
+    Монте-Карло — чувствительность к допущениям, а не вероятность успеха. Маршруты 60/40 и размеры сегментов (S2 ≈8,5 млн, S1 ≈6,8 млн, S3 ≈10,5 млн) — стартовые допущения, а не ёмкость рынка.
+  </div>
+
+</div>
+</body>
+</html>
